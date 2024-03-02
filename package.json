@@ -1,0 +1,58 @@
+{
+  "name": "@inialum/eslint-config",
+  "version": "0.1.0",
+  "description": "ESLint config for INIALUM",
+  "license": "Apache-2.0",
+  "repository": "inialum/eslint-config",
+  "main": "index.js",
+  "files": [
+    "./index.js",
+    "./src"
+  ],
+  "scripts": {
+    "lint": "pnpm run lint:check && pnpm run format:check",
+    "lint:check": "eslint --cache \"**/*.{js,jsx,ts,tsx}\" --ignore-path .gitignore .",
+    "lint:fix": "eslint --fix --cache \"**/*.{js,jsx,ts,tsx}\" --ignore-path .gitignore .",
+    "format": "pnpm run format:write",
+    "format:check": "prettier --cache --check \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "format:write": "prettier --cache --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "test": "vitest",
+    "test:ci": "pnpm run test:coverage",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --project tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-unused-imports": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.1.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-storybook": "^0.8.0",
+    "eslint-plugin-testing-library": "^6.2.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3",
+    "vitest": "^1.3.1"
+  },
+  "peerDependencies": {
+    "eslint": ">= 8.0.0",
+    "eslint-config-next": ">= 14.1.1",
+    "eslint-plugin-storybook": ">= 0.8.0",
+    "eslint-plugin-testing-library": ">= 6.2.0"
+  },
+  "peerDependenciesMeta": {
+    "eslint-config-next": {
+      "optional": true
+    },
+    "eslint-plugin-storybook": {
+      "optional": true
+    },
+    "eslint-plugin-testing-library": {
+      "optional": true
+    }
+  }
+}
