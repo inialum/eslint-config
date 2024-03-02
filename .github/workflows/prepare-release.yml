@@ -5,8 +5,7 @@ on:
       - 'v*'
 
 jobs:
-  check:
-    name: Test for release
+  test:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     permissions:
@@ -38,7 +37,7 @@ jobs:
 
   prepare-release:
     name: Create release notes
-    needs: check
+    needs: test
     runs-on: ubuntu-latest
     timeout-minutes: 3
     permissions:
