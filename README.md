@@ -20,7 +20,7 @@ If no config is specified, the base `typescript` config will be used.
 module.exports = {
   extends: ['@inialum'], // same as "@inialum/eslint-config/typescript"
   parserOptions: {
-    project: './tsconfig.json',
+    project: './tsconfig.json', // Rewrite this to your tsconfig path
   },
 }
 ```
@@ -31,7 +31,7 @@ module.exports = {
 module.exports = {
   extends: ['@inialum/eslint-config/next'],
   parserOptions: {
-    project: './tsconfig.json',
+    project: './tsconfig.json', // Rewrite this to your tsconfig path
   },
 }
 ```
