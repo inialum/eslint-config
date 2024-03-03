@@ -10,7 +10,7 @@ ESLint config for [INIALUM](https://inialum.org)
 pnpm add -D eslint @inialum/eslint-config
 ```
 
-## Release
+## Release (for maintainers)
 
 Run [Release workflow (GitHub Actions)](https://github.com/inialum/eslint-config/actions/workflows/release.yml) to publish new version to npm.
 You can choose `major`, `minor`, or `patch` version to be released.
