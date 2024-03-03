@@ -28,6 +28,6 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Publish package to npm
-        run: pnpm publish --provenance
+        run: pnpm publish --provenance --dry-run
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
