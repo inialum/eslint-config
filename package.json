@@ -1,6 +1,6 @@
 {
   "name": "@inialum/eslint-config",
-  "version": "0.3.13",
+  "version": "0.3.14",
   "description": "ESLint config for INIALUM",
   "author": {
     "name": "INIALUM",
