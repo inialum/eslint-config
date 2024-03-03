@@ -15,6 +15,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "keywords": [
+    "eslint",
+    "config"
+  ],
   "main": "index.js",
   "files": [
     "./src"
