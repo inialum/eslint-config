@@ -7,7 +7,7 @@ module.exports = {
     node: true,
     es2022: true,
   },
-  extends: ['eslint:recommended'],
+  extends: ['eslint:recommended', 'plugin:redos/recommended'],
   plugins: ['import', 'unused-imports'],
   rules: {
     'no-debugger': 'warn',
@@ -18,6 +18,7 @@ module.exports = {
       },
     ],
     'import/newline-after-import': 'error',
+    'import/no-cycle': 'error',
     'import/order': [
       'warn',
       {
@@ -62,7 +63,6 @@ module.exports = {
         ],
       },
     ],
-
     'unused-imports/no-unused-imports': 'error',
     'unused-imports/no-unused-vars': [
       'warn',

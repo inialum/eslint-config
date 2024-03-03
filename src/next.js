@@ -7,6 +7,5 @@ module.exports = {
     require.resolve('./typescript'),
     'next/core-web-vitals',
     'plugin:storybook/recommended',
-    'plugin:redos/recommended',
   ],
 }
