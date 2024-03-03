@@ -18,6 +18,7 @@ module.exports = {
       },
     ],
     'import/newline-after-import': 'error',
+    'import/no-cycle': 'error',
     'import/order': [
       'warn',
       {
