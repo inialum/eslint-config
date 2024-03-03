@@ -20,6 +20,13 @@
     "config"
   ],
   "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./base": "./src/base.js",
+    "./next": "./src/next.js",
+    "./react-testing-library": "./src/react-testing-library.js",
+    "./typescript": "./src/typescript.js"
+  },
   "files": [
     "./src"
   ],
