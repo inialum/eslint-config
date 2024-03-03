@@ -16,23 +16,23 @@ pnpm add -D eslint @inialum/eslint-config
 
 If no config is specified, the base `typescript` config will be used.
 
-```json
-{
-  "extends": ["@inialum"], // same as "@inialum/eslint-config/typescript"
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  }
+```js
+module.exports = {
+  extends: ['@inialum'], // same as "@inialum/eslint-config/typescript"
+  parserOptions: {
+    project: './tsconfig.json',
+  },
 }
 ```
 
 ### Next.js
 
-```json
-{
-  "extends": ["@inialum/eslint-config/next"],
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  }
+```js
+module.exports = {
+  extends: ['@inialum/eslint-config/next'],
+  parserOptions: {
+    project: './tsconfig.json',
+  },
 }
 ```
 
@@ -44,12 +44,12 @@ pnpm add -D eslint-config-next eslint-plugin-storybook
 
 ### React Testing Library
 
-```json
-{
-  "extends": [
-    "@inialum", // Optional
-    "@inialum/eslint-config/react-testing-library"
-  ]
+```js
+module.exports = {
+  extends: [
+    '@inialum', // Optional
+    '@inialum/eslint-config/react-testing-library',
+  ],
 }
 ```
 
@@ -63,9 +63,9 @@ pnpm add -D eslint-plugin-testing-library
 
 e.g.) `.js` files
 
-```json
-{
-  "extends": ["@inialum/eslint-config/base"]
+```js
+module.exports = {
+  extends: ['@inialum/eslint-config/base'],
 }
 ```
 
