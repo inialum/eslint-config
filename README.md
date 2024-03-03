@@ -4,10 +4,6 @@ ESLint config for [INIALUM](https://inialum.org)
 
 ## Release
 
-1. Update version in `package.json` locally  
-   You can use `pnpm version [patch|minor|major]` to update version. This will also create a new commit and tag.
-2. Push the changes to the repository  
-   When you push Git tags, GitHub Actions will automatically create a draft release.
-3. Publish a new release in GitHub  
-   Access the [releases page](https://github.com/inialum/eslint-config/releases) and edit the draft release to publish it.
-   When you publish a release, GitHub Actions will automatically publish the package to npm.
+Run [Release workflow (GitHub Actions)](https://github.com/inialum/eslint-config/actions/workflows/release.yml) to publish new version to npm.
+You can choose `major`, `minor`, or `patch` version to be released.
+This workflow will automatically create a new release in GitHub and publish the package to npm.
