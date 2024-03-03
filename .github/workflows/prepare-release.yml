@@ -99,7 +99,7 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             await github.request(`POST /repos/${{ github.repository }}/releases`, {
-              tag_name: "${{ 'v' }}${{ steps.get_version.outputs.value }}",
+              tag_name: ${{ 'v' }}${{ steps.get_version.outputs.value }},
               draft: true,
               generate_release_notes: true
             });
