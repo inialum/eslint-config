@@ -12,6 +12,9 @@
     "type": "git",
     "url": "https://github.com/inialum/eslint-config"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "index.js",
   "files": [
     "./src"
