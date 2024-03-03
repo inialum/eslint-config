@@ -1,5 +1,7 @@
 # @inialum/eslint-config
 
+[![npm version](https://badge.fury.io/js/@inialum%2Feslint-config.svg)](https://www.npmjs.com/package/@inialum/eslint-config)
+
 ESLint config for [INIALUM](https://inialum.org)
 
 ## Installation
