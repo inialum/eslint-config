@@ -47,13 +47,23 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     timeout-minutes: 3
+    if: github.repository == 'inialum/eslint-config'
     permissions:
       contents: write
       id-token: write
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ vars.INIALUM_AUTOMATION_APP_ID }}
+          private-key: ${{ secrets.INIALUM_AUTOMATION_PRIVATE_KEY }}
+
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          ref: ${{ github.head_ref }}
+          persist-credentials: false
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v3
@@ -69,11 +79,11 @@ jobs:
 
       - name: Configure git
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git remote set-url origin https://github-actions:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
+          git config --global user.name 'inialum-automation[bot]'
+          git config --global user.email '165284237+inialum-automation[bot]@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
 
       - name: Update patch version
         if: contains(github.event.inputs.versioning, 'patch')
@@ -90,7 +100,7 @@ jobs:
       - name: Push changes
         run: git push --follow-tags origin HEAD
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
 
       - name: Get updated version
         id: get_version
@@ -99,7 +109,7 @@ jobs:
       - name: Create release note
         uses: actions/github-script@v7
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
+          github-token: ${{ steps.app-token.outputs.token }}
           script: |
             await github.request(`POST /repos/${{ github.repository }}/releases`, {
               tag_name: "v${{ steps.get_version.outputs.value }}",
