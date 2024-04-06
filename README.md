@@ -36,10 +36,10 @@ module.exports = {
 }
 ```
 
-When you use this config, you should also install `eslint-plugin-react-hooks` and `eslint-plugin-storybook` as devDependencies.
+When you use this config, you should also install `eslint-plugin-react-hooks`, `eslint-plugin-react-refresh` and `eslint-plugin-storybook` as devDependencies.
 
 ```bash
-pnpm add -D eslint-plugin-react-hooks eslint-plugin-storybook
+pnpm add -D eslint-plugin-react-hooks eslint-plugin-react-refresh eslint-plugin-storybook
 ```
 
 ### React Testing Library
