@@ -25,21 +25,21 @@ module.exports = {
 }
 ```
 
-### Next.js
+### React
 
 ```js
 module.exports = {
-  extends: ['@inialum/eslint-config/next'],
+  extends: ['@inialum/eslint-config/react'],
   parserOptions: {
     project: './tsconfig.json', // Rewrite this to your tsconfig path
   },
 }
 ```
 
-When you use this config, you should also install `eslint-config-next` and `eslint-plugin-storybook` as devDependencies.
+When you use this config, you should also install `eslint-plugin-react-hooks`, `eslint-plugin-react-refresh` and `eslint-plugin-storybook` as devDependencies.
 
 ```bash
-pnpm add -D eslint-config-next eslint-plugin-storybook
+pnpm add -D eslint-plugin-react-hooks eslint-plugin-react-refresh eslint-plugin-storybook
 ```
 
 ### React Testing Library
@@ -57,6 +57,23 @@ When you use this config, you should also install `eslint-plugin-testing-library
 
 ```bash
 pnpm add -D eslint-plugin-testing-library
+```
+
+### Next.js
+
+```js
+module.exports = {
+  extends: ['@inialum/eslint-config/next'],
+  parserOptions: {
+    project: './tsconfig.json', // Rewrite this to your tsconfig path
+  },
+}
+```
+
+When you use this config, you should also install `eslint-config-next` and `eslint-plugin-storybook` as devDependencies.
+
+```bash
+pnpm add -D eslint-config-next eslint-plugin-storybook
 ```
 
 ### Minimal
