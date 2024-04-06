@@ -1,7 +1,7 @@
 module.exports = {
   base: require('./base'),
-  reactTestingLibrary: require('./react-testing-library'),
   react: require('./react'),
+  reactTestingLibrary: require('./react-testing-library'),
   next: require('./next'),
   typescript: require('./typescript'),
 }
