@@ -4,7 +4,8 @@
 test('Check all entry points', () => {
   expect(() => require('..')).not.toThrow()
   expect(() => require('../src/base')).not.toThrow()
-  expect(() => require('../src/next')).not.toThrow()
+  expect(() => require('../src/react')).not.toThrow()
   expect(() => require('../src/react-testing-library')).not.toThrow()
+  expect(() => require('../src/next')).not.toThrow()
   expect(() => require('../src/typescript')).not.toThrow()
 })
